@@ -10,10 +10,10 @@ import java.util.List;
 import kata4.model.Mail;
 
 public class MailListReader {
+    
     public static List<Mail> read(String fileName) throws FileNotFoundException, IOException{
-        List<Mail> list = new ArrayList<>();
-        File mails = new File (fileName);
-        FileReader fr = new FileReader (mails);
+        List<Mail> list = new ArrayList<>(); 
+        FileReader fr = new FileReader (new File (fileName));
         BufferedReader br = new BufferedReader(fr);
         while(true){
             String read = br.readLine();
@@ -21,6 +21,10 @@ public class MailListReader {
             list.add(new Mail(read));
         }
         return list;
+    }
+    
+    public void input(){
+        
     }
             
 
